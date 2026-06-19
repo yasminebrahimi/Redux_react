@@ -1,10 +1,10 @@
-
 import "./App.css";
-
 
 function App() {
   return (
-   <div>Redux demo</div>
+    <Provider store={store}>
+      <div>redux demo</div>
+    </Provider>
   );
 }
 
