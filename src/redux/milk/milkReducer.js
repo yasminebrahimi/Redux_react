@@ -9,7 +9,7 @@ export default function milkReducer(state = initialState, action) {
     case BUY_MILK: {
       return {
         ...state,
-        numOfMilks: state.numOfMilks - action.paylaod,
+        numOfMilks: state.numOfMilks - action.payload,
       };
     }
     default:

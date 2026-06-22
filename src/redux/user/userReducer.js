@@ -10,8 +10,8 @@ const initialState = {
   error: "",
 };
 
-export default function userReducer(state, action) {
-  switch (acyion.type) {
+export default function userReducer(state = initialState, action) {
+  switch (action.type) {
     case FETCH_USERS_REQUEST:
       return {
         ...state,
@@ -21,7 +21,7 @@ export default function userReducer(state, action) {
       return {
         ...state,
         loading: false,
-        data: action.playload,
+        data: action.payload,
         error: "",
       };
     case FETCH_USERS_FAILURE:
@@ -29,14 +29,14 @@ export default function userReducer(state, action) {
         ...state,
         loading: false,
         data: [],
-        error: action.playload,
+        error: action.payload,
       };
     default:
       return state;
   }
 }
 
-// fetch user is an Async action (side effect) => redux-thunk
+//  fetch user is an Async action (side effect) => redux-thunk
 // 1. REQUEST :
 // 2. SUCCESS :
 // 3. FAILURE :
