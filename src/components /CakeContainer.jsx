@@ -6,7 +6,7 @@ function CakeContainer() {
   const [value, setValue] = useState(" ");
   //1. this hooks accepts a function as its parameter: selector function
   //2. useSelector hooks return whatever returns by selector function
-  const state = useSelector((state) => state);
+  const state = useSelector((state) => state.cake);
   //console.log(state);
 
   // returns a reference to the dispatch function in redux store
