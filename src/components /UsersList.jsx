@@ -8,7 +8,21 @@ function UsersList() {
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);
-  return <div>UsersList</div>;
+  return (
+    <div>
+      <h2>UsersList</h2>
+      {state.loading ? (
+        <p>Loading... </p>
+      ) : state.error ? (
+        <p>{state.error}</p>
+      ) : (
+        <div>
+          {state.data &&
+            state.data.map((user) => <li key={user.id}>{user.name}</li>)}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default UsersList;
