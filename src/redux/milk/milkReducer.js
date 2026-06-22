@@ -4,9 +4,9 @@ const initialState = {
   numOfMilks: 10,
 };
 
-export default function cakeReducer(state = initialState, action) {
+export default function milkReducer(state = initialState, action) {
   switch (action.type) {
-    case BUY_CAKE: {
+    case BUY_MILK: {
       return {
         ...state,
         numOfMilks: state.numOfMilks - action.paylaod,
